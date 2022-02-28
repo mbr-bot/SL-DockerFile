@@ -68,8 +68,8 @@ pipeline {
         stage('delete existing images and containers')
         {
             steps{
-sh '''docker rm -vf $(docker ps -a -q)
-docker rmi -f $(docker images -a -q)
+sh '''docker rm $(docker ps -aq --filter status=exited)
+docker rmi $(docker images -aq --filter dangling=true)
            '''
 
             }
