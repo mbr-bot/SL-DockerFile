@@ -68,7 +68,7 @@ pipeline {
         stage('delete existing images and containers')
         {
             steps{
-sh '''docker rmi $(docker images -aq --filter dangling=true)
+sh '''docker rmi busybox
            '''
 
             }
