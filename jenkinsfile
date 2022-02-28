@@ -68,8 +68,9 @@ pipeline {
         stage('delete existing images and containers')
         {
             steps{
-                sh "docker rm -vf "$(docker ps -a -q)""
-                sh "docker rmi -f "$(docker images -a -q)""
+               sh '''docker rm -vf $(docker ps -a -q)
+                        docker rmi -f $(docker images -a -q)
+                    '''
             }
         } 
 
