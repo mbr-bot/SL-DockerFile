@@ -68,8 +68,9 @@ pipeline {
         stage('delete existing images and containers')
         {
             steps{
-sh '''docker rmi busybox
-           '''
+                    sh '''docker rmi busybox
+                        docker container prune -f
+                       '''
 
             }
         } 
