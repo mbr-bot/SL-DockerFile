@@ -6,7 +6,7 @@ pipeline {
 
         registryCredential = 'mydocker' 
 
-        dockerImage = 'mbr-busybox' 
+        dockerImage = '' 
 
     }
 
