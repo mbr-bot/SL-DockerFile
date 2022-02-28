@@ -68,7 +68,8 @@ pipeline {
         stage('delete existing images and containers')
         {
             steps{
-                    sh '''docker rmi busybox
+                    sh '''
+                        docker rmi manjunathin/mbr:$BUILD_NUMBER -f
                         docker container prune -f
                        '''
 
