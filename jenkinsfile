@@ -61,7 +61,8 @@ pipeline {
             steps { 
 
                 //sh "docker rmi $registry:$BUILD_NUMBER" 
-                sh '''docker rmi $registry:$BUILD_NUMBER'''
+                sh '''docker rmi $registry:$BUILD_NUMBER
+                      docker rmi busybox -f'''
 
             }
 
