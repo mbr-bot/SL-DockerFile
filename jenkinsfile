@@ -65,7 +65,7 @@ pipeline {
             }
 
         }
-        stage('delete existing images and containers')
+      /*  stage('delete existing images and containers')
         {
             steps{
                     sh '''
@@ -74,7 +74,7 @@ pipeline {
                        '''
 
                 }
-        }
+        }*/
         stage('Pull docker image from hub')
         {
             steps{
