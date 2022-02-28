@@ -67,24 +67,25 @@ pipeline {
             }
 
         }
-      /*  stage('delete existing images and containers')
+         stage('Pull docker image from hub')
         {
             steps{
-                    sh '''
-                        docker rmi manjunathin/mbr:$BUILD_NUMBER -f
-                        docker container prune -f
-                       '''
-
-                }
-        }*/
-       /* stage('Pull docker image from hub')
-        {
-            steps{
-                //sh "docker pull manjunathin/mbr:$BUILD_NUMBER" 
-                //sh "docker rmi $registry:$BUILD_NUMBER" 
+                sh "docker pull manjunathin/mbr:$BUILD_NUMBER" 
+                
 
             }
-        } */
+        } 
+        stage('Cleaning up-Final') { 
+
+            steps { 
+
+                 
+                sh '''docker rmi $registry:$BUILD_NUMBER
+                      '''
+
+            }
+
+        }
 
     }
 
