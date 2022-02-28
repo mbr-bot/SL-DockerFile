@@ -78,7 +78,8 @@ pipeline {
         stage('Pull docker image from hub')
         {
             steps{
-                sh "docker pull manjunathin/mbr:$BUILD_NUMBER" 
+                //sh "docker pull manjunathin/mbr:$BUILD_NUMBER" 
+                //sh "docker rmi $registry:$BUILD_NUMBER" 
 
             }
         } 
