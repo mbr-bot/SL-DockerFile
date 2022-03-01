@@ -67,7 +67,7 @@ pipeline {
             }
 
         }
-         stage('Pull docker image from hub')
+  /*       stage('Pull docker image from hub')
         {
             steps{
                 sh "docker pull $registry:$BUILD_NUMBER" 
@@ -93,7 +93,7 @@ pipeline {
 
             }
 
-        }
+        }*/
 
     }
 
